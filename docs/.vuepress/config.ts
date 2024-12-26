@@ -19,14 +19,15 @@ export default defineUserConfig({
   },
 
   head: [
-    ['link', { rel: 'icon', type: 'image/png', href: '/blog-logo.png' }]
+    ['link', { rel: 'icon', type: 'image/png', href: '/blog-logo.png' }],
+    ['meta', {'meta': 'google-site-verification', 'content': 'TWSCIdeIEIO2M7dTsf4O8YAqpdMNzbQof3DZOaI7Si4'}]
   ],
 
   bundler: viteBundler(),
 
   theme: plumeTheme({
     // 添加您的部署域名
-    // hostname: 'https://your_site_url',
+    hostname: 'https://ysh0313.github.io/',
     // your git repo url
     docsRepo: '',
     docsDir: 'docs',
