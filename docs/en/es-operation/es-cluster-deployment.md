@@ -23,7 +23,7 @@ hostnamectl
 The following output should be seen after successful execution:
 
 ```text
- Static hostname: server46
+ Static hostname: server1
        Icon name: computer-server
          Chassis: server
       Machine ID: b3xxxxx22961xxxxxxc370fdxxxxxxxx
@@ -123,14 +123,14 @@ Edit the configuration file `vim elasticsearch.yml` and add the following conten
 
 ```yml
 cluster.name: es-cluster # Name of the ES service, the name must be the same across all nodes
-node.name: server46 # Alias of the node
+node.name: server1 # Alias of the node
 path.data: /haitian/service/elasticsearch/data # Data storage directory
 path.logs: /haitian/service/elasticsearch/logs # Log storage directory
 bootstrap.memory_lock: true  # Allow memory locking
 network.host: 0.0.0.0  # Allow access from all IPs, set as needed
 http.port: 9200 # Service port
-discovery.seed_hosts: [ "10.10.7.46", "10.10.7.43", "10.10.7.44" ] # Node IP addresses
-cluster.initial_master_nodes: [ "10.10.7.46", "10.10.7.43", "10.10.7.44" ] # List of IPs allowed to perform master node election. It helps with the initial master node election and ensures the cluster starts properly to prevent split brain issues.
+discovery.seed_hosts: [ "xx.xx.xx.xx", "xx.xx.xx.xx", "xx.xx.xx.xx" ] # Node IP addresses
+cluster.initial_master_nodes: [ "xx.xx.xx.xx", "xx.xx.xx.xx", "xx.xx.xx.xx" ] # List of IPs allowed to perform master node election. It helps with the initial master node election and ensures the cluster starts properly to prevent split brain issues.
 action.auto_create_index: .monitoring*,.watches,.triggered_watches,.watcher-history*,.ml* # Controls whether Elasticsearch allows auto-creation of indexes. It decides whether new indexes will be created automatically when they don't exist.
 xpack.security.transport.ssl.enabled: false # Disable SSL encryption for communication between Elasticsearch nodes (Transport communication).
 xpack.security.http.ssl.enabled: false # Disable SSL encryption for HTTP communication between the client and Elasticsearch.
@@ -147,9 +147,9 @@ xpack.security.enabled: false # Fully disable X-Pack security features. The last
 Edit the `/etc/hosts` file and add the following content at the bottom:
 
 ```text
-10.10.7.46 server46
-10.10.7.43 server43
-10.10.7.44 server44
+xx.xx.xx.xx server1
+xx.xx.xx.xx server2
+xx.xx.xx.xx server3
 ```
 
 ## Add Data Directory
@@ -249,14 +249,14 @@ If successful, you will see something similar to the following:
              ├─6816 /home/haitian/service/elasticsearch/jdk/bin/java -Des.networkaddress.cache.ttl=60 -Des.networkaddress.cache.negative.ttl=10 -XX:+AlwaysPreTouch -Xss1m -Djava.awt.headless=true -Dfile.>
              └─6870 /home/haitian/service/elasticsearch/modules/x-pack-ml/platform/linux-x86_64/bin/controller
 
-Dec 26 05:57:34 server43 elasticsearch[6816]: [2024-12-26T05:57:34,367][INFO ][o.e.x.d.l.DeprecationIndexingComponent] [server43] deprecation component started
-Dec 26 05:57:34 server43 elasticsearch[6816]: [2024-12-26T05:57:34,428][INFO ][o.e.t.TransportService   ] [server43] publish_address {10.10.7.43:9300}, bound_addresses {[::]:9300}
-Dec 26 05:57:35 server43 elasticsearch[6816]: [2024-12-26T05:57:35,078][INFO ][o.e.b.BootstrapChecks    ] [server43] bound or publishing to a non-loopback address, enforcing bootstrap checks
-Dec 26 05:57:35 server43 elasticsearch[6816]: [2024-12-26T05:57:35,081][WARN ][o.e.c.c.ClusterBootstrapService] [server43] this node is locked into cluster UUID [BX97hvt_TgePRe-k7o2c_A] but [cluster.init>
-Dec 26 05:57:35 server43 elasticsearch[6816]: [2024-12-26T05:57:35,632][INFO ][o.e.c.s.ClusterApplierService] [server43] master node changed {previous [], current [{server46}{gVMoUjG1RBO_85cb2e2wsw}{7sgO>
-Dec 26 05:57:35 server43 elasticsearch[6816]: [2024-12-26T05:57:35,648][INFO ][o.e.c.s.ClusterSettings  ] [server43] updating [xpack.monitoring.collection.enabled] from [false] to [true]
-Dec 26 05:57:35 server43 elasticsearch[6816]: [2024-12-26T05:57:35,989][INFO ][o.e.l.ClusterStateLicenseService] [server43] license [39bb98a8-622d-443b-86e5-765273df2139] mode [basic] - valid
-Dec 26 05:57:35 server43 elasticsearch[6816]: [2024-12-26T05:57:35,995][INFO ][o.e.h.AbstractHttpServerTransport] [server43] publish_address {10.10.7.43:9200}, bound_addresses {[::]:9200}
-Dec 26 05:57:36 server43 elasticsearch[6816]: [2024-12-26T05:57:36,006][INFO ][o.e.n.Node               ] [server43] started {server43}{fGIwpTAZSKSNO6ncsONurQ}{DxsV34E3SzOhwzFNoeRy1w}{server43}{10.10.7.4>
-Dec 26 05:57:36 server43 systemd[1]: Started Elasticsearch Service.
+Dec 26 05:57:34 server2 elasticsearch[6816]: [2024-12-26T05:57:34,367][INFO ][o.e.x.d.l.DeprecationIndexingComponent] [server2] deprecation component started
+Dec 26 05:57:34 server2 elasticsearch[6816]: [2024-12-26T05:57:34,428][INFO ][o.e.t.TransportService   ] [server2] publish_address {xx.xx.xx.xx:9300}, bound_addresses {[::]:9300}
+Dec 26 05:57:35 server2 elasticsearch[6816]: [2024-12-26T05:57:35,078][INFO ][o.e.b.BootstrapChecks    ] [server2] bound or publishing to a non-loopback address, enforcing bootstrap checks
+Dec 26 05:57:35 server2 elasticsearch[6816]: [2024-12-26T05:57:35,081][WARN ][o.e.c.c.ClusterBootstrapService] [server2] this node is locked into cluster UUID [BX97hvt_TgePRe-k7o2c_A] but [cluster.init>
+Dec 26 05:57:35 server2 elasticsearch[6816]: [2024-12-26T05:57:35,632][INFO ][o.e.c.s.ClusterApplierService] [server2] master node changed {previous [], current [{server1}{gVMoUjG1RBO_85cb2e2wsw}{7sgO>
+Dec 26 05:57:35 server2 elasticsearch[6816]: [2024-12-26T05:57:35,648][INFO ][o.e.c.s.ClusterSettings  ] [server2] updating [xpack.monitoring.collection.enabled] from [false] to [true]
+Dec 26 05:57:35 server2 elasticsearch[6816]: [2024-12-26T05:57:35,989][INFO ][o.e.l.ClusterStateLicenseService] [server2] license [39bb98a8-622d-443b-86e5-765273df2139] mode [basic] - valid
+Dec 26 05:57:35 server2 elasticsearch[6816]: [2024-12-26T05:57:35,995][INFO ][o.e.h.AbstractHttpServerTransport] [server2] publish_address {xx.xx.xx.xx:9200}, bound_addresses {[::]:9200}
+Dec 26 05:57:36 server2 elasticsearch[6816]: [2024-12-26T05:57:36,006][INFO ][o.e.n.Node               ] [server2] started {server2}{fGIwpTAZSKSNO6ncsONurQ}{DxsV34E3SzOhwzFNoeRy1w}{server2}{10.10.7.4>
+Dec 26 05:57:36 server2 systemd[1]: Started Elasticsearch Service.
 ```
