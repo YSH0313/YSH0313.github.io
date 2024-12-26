@@ -1,6 +1,9 @@
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
+import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
+
+const isProd = process.env.NODE_ENV = 'production'
 
 export default defineUserConfig({
   base: '/',
@@ -21,6 +24,10 @@ export default defineUserConfig({
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/blog-logo.png' }],
     ['meta', {'meta': 'google-site-verification', 'content': 'TWSCIdeIEIO2M7dTsf4O8YAqpdMNzbQof3DZOaI7Si4'}]
+  ],
+
+  plugins: [
+      isProd ? googleAnalyticsPlugin({ id: 'G-L1ZLC7XBGS' }): []
   ],
 
   bundler: viteBundler(),
