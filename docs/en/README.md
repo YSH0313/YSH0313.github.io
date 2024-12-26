@@ -7,9 +7,9 @@ config:
     full: true
     background: tint-plate
     hero:
-      name: Theme Plume
-      tagline: VuePress Next Theme
-      text: A simple, feature-rich, document & blog
+      name: Yuanshao Blog
+      tagline: Personal blog website
+      text: Here, I will record some of my learning process and technical sharing
       actions:
         -
           theme: brand
@@ -18,5 +18,5 @@ config:
         -
           theme: alt
           text: Github →
-          link: https://github.com/pengzhanbo/vuepress-theme-plume
+          link: https://github.com/YSH0313
 ---
