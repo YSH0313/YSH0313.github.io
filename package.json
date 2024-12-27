@@ -1,10 +1,10 @@
 {
-  "name": "yuanshao-blog",
+  "name": "Hunter",
   "type": "module",
   "version": "1.0.0",
   "description": "个人日常学习记录及技术分享",
   "packageManager": "pnpm@9.14.2",
-  "author": "袁少航 <yuanshaohang@dataoceanai.com>",
+  "author": "袁少航 <ysh17600824539@gmail.com>",
   "license": "MIT",
   "engines": {
     "node": "^18.20.0 || >=20.0.0"

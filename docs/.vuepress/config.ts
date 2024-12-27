@@ -3,19 +3,19 @@ import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
 
-const isProd = process.env.NODE_ENV = 'production'
+const isProd = process.env.NODE_ENV === 'production'
 
 export default defineUserConfig({
   base: '/',
   lang: 'zh-CN',
   locales: {
     '/': {
-      title: 'Yuanshao Blog',
+      title: '袁少航',
       lang: 'zh-CN',
       description: '个人日常学习记录及分享',
     },
     '/en/': {
-      title: 'Yuanshao Blog',
+      title: 'Hunter',
       lang: 'en-US',
       description: '个人日常学习记录及分享',
     },
@@ -89,17 +89,19 @@ export default defineUserConfig({
        * 评论 comments
        * @see https://theme-plume.vuejs.press/guide/features/comments/
        */
-      // comment: {
-      //   provider: '', // "Artalk" | "Giscus" | "Twikoo" | "Waline"
-      //   comment: true,
-      //   repo: '',
-      //   repoId: '',
-      //   category: '',
-      //   categoryId: '',
-      //   mapping: 'pathname',
-      //   reactionsEnabled: true,
-      //   inputPosition: 'top',
-      // },
+      comment: {
+        provider: 'Giscus', // "Artalk" | "Giscus" | "Twikoo" | "Waline"
+        comment: true,
+        repo: 'YSH0313/YSH0313.github.io',
+        repoId: 'R_kgDONicKtg',
+        category: 'Q&A',
+        categoryId: 'DIC_kwDONicKts4CljKD',
+        mapping: 'pathname',
+        reactionsEnabled: true,
+        inputPosition: 'top',
+        darkTheme: 'dark_protanopia',
+        lightTheme: 'light_protanopia',
+      },
     },
   }),
 })

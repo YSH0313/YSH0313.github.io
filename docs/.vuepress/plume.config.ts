@@ -32,8 +32,8 @@ export default defineThemeConfig({
     '/': {
       profile: {
         avatar: '/blog-logo.svg',
-        name: 'Yuanshao blog',
-        description: '个人日常学习记录及分享',
+        name: '袁少航',
+        description: '沉着 冷静 专注 思考',
         // circle: true,
         // location: '',
         // organization: '',
@@ -45,8 +45,8 @@ export default defineThemeConfig({
     '/en/': {
       profile: {
         avatar: '/blog-logo.svg',
-        name: 'Yuanshao blog',
-        description: '个人日常学习记录及分享',
+        name: 'Hunter',
+        description: 'Poise, Serenity, Concentration, and Reflection',
         // circle: true,
         // location: '',
         // organization: '',
