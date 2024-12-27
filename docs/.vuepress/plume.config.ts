@@ -8,7 +8,7 @@ import { enNavbar, zhNavbar } from './navbar'
 export default defineThemeConfig({
   logo: '/blog-logo.png',
 
-  appearance: 'dark',
+  appearance: true,
 
   social: [
     { icon: 'github', link: 'https://github.com/YSH0313' },
