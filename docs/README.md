@@ -43,10 +43,11 @@ config:
         link: /
 ---
 
-<h2 style="text-align: center;margin: 32px 0 32px">开源项目</h2>
+:::center
+# 开源项目
+:::
 
 <CardGrid>
   <RepoCard repo="YSH0313/single_process" />
   <RepoCard repo="YSH0313/pacer" />
 </CardGrid>
-
