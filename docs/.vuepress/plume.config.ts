@@ -55,13 +55,19 @@ export default defineThemeConfig({
 
       navbar: enNavbar,
       notes: enNotes,
+
+      bulletin: {
+        layout: 'bottom-right',
+        lifetime: 'always',
+        title: '🎉 公告 🎉',
+        contentFile: path.join(__dirname, 'bulletin-en.md'),
+      },
     },
   },
-
   bulletin: {
     layout: 'bottom-right',
     lifetime: 'always',
-    // title: '🎉 公告 🎉',
+    title: '🎉 公告 🎉',
     contentFile: path.join(__dirname, 'bulletin.md'),
   },
 })
